@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #D4A847;
+    --navy-dark: #0D1621;
+    --navy: #1B2A4A;
+    --navy-mid: #243352;
+    --navy-light: #2A3F6A;
+    --navy-border: #334466;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0D1621;
+    color: #E2E8F0;
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D1621;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334466;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4A847;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-navy rounded-lg border border-navy-border p-5;
+  }
+
+  .card-dark {
+    @apply bg-navy-dark rounded-lg border border-navy-border p-5;
+  }
+
+  .label {
+    @apply text-xs font-medium uppercase tracking-widest text-slate-400;
+  }
+
+  .value {
+    @apply text-lg font-semibold text-white;
+  }
+
+  .gold-text {
+    @apply text-gold font-semibold;
+  }
+
+  .table-header {
+    @apply text-xs uppercase tracking-widest text-slate-400 px-4 py-3 text-left;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 text-sm text-slate-200;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-navy-dark font-semibold px-4 py-2 rounded hover:bg-gold-light transition-colors text-sm;
+  }
+}
