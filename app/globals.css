@@ -48,11 +48,11 @@
 
 @layer components {
   .card {
-    @apply bg-navy rounded-lg border border-navy-border p-5;
+    @apply bg-navy rounded-2xl border border-navy-border p-5;
   }
 
   .card-dark {
-    @apply bg-navy-dark rounded-lg border border-navy-border p-5;
+    @apply bg-navy-dark rounded-2xl border border-navy-border p-5;
   }
 
   .label {
@@ -77,5 +77,35 @@
 
   .btn-gold {
     @apply bg-gold text-navy-dark font-semibold px-4 py-2 rounded hover:bg-gold-light transition-colors text-sm;
+  }
+
+  .card-std {
+    @apply bg-navy rounded-2xl border border-navy-border p-6;
+    backdrop-filter: blur(24px);
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    transition: border-color 0.2s;
+  }
+
+  .card-std:hover {
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .type-kpi {
+    @apply text-[28px] font-bold text-gold;
+    font-family: system-ui, sans-serif;
+  }
+
+  .type-card-title {
+    @apply text-[13px] font-semibold uppercase tracking-[0.08em] text-slate-400;
+  }
+
+  .type-label {
+    @apply text-xs text-slate-400;
+  }
+
+  .type-mono {
+    @apply text-sm font-mono text-slate-200;
   }
 }
