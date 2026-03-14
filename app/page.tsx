@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import MarketCloseTimer from '@/components/MarketCloseTimer'
+import TradingSignals from '@/components/TradingSignals'
+import TTFHoldings from '@/components/TTFHoldings'
 
 type Signal = 'LONG' | 'STAND_BY' | 'BEAR'
 
@@ -225,6 +227,26 @@ export default function Dashboard() {
           <StatBox label="vs Buy & Hold" value="-209%" note="(B&H: +300%)" negative />
         </div>
         <p className="text-xs text-slate-600 mt-4">Period: 2015–2026 · Capital: $100K · Commission: 0.1%</p>
+      </div>
+
+      {/* ── Trading Section ───────────────────────────────────────────── */}
+      <div className="pt-2">
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="text-xl font-bold text-white">⚡ Trading Intelligence</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-orange-500/40 to-transparent" />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Trading Signals Widget */}
+          <div className="card border-gray-700 bg-gray-900/50 backdrop-blur">
+            <TradingSignals />
+          </div>
+
+          {/* TTF Holdings Widget */}
+          <div className="card border-gray-700 bg-gray-900/50 backdrop-blur">
+            <TTFHoldings />
+          </div>
+        </div>
       </div>
     </div>
   )
