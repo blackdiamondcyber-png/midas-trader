@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 
-const API_BASE = 'http://localhost:8765'
+const API_BASE = '/api/trading'
 
 interface HealthData {
   status: string
@@ -110,7 +110,7 @@ export default function TradingSignals() {
         fetch(`${API_BASE}/health`),
         fetch(`${API_BASE}/prices/SPY`),
         fetch(`${API_BASE}/prices/QQQ`),
-        fetch(`${API_BASE}/api/strategies/evaluate`, {
+        fetch(`${API_BASE}/strategies/evaluate`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ticker: 'SPY', vix_level: vix }),

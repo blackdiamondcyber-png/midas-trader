@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const API_BASE = 'http://localhost:8765'
+const API_BASE = '/api/trading'
 
 interface Holding {
   ticker: string
